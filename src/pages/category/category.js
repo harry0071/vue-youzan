@@ -14,6 +14,7 @@ const app = new Vue({
 		kinds:[],
 		items:[],
 		clickIndex:0,
+		val:'',
 	},
 	mixins:[mixin],
 	created(){
@@ -31,6 +32,9 @@ const app = new Vue({
 		goTo(arg){
 			open(`search.html?keyword=${arg.name}&id=${arg.id}`,'_self');
 		},
+		gotoSearch(val){
+			open(`search.html?keyword=${val}`,'_self');
+		}
 	},
 
 });
