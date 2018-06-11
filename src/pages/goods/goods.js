@@ -80,6 +80,7 @@ new Vue({
 				title:this.data.title,
 				price:this.data.price,
 				skuNumber:this.skuNumber,
+				sku:this.data.sku,
 			});
 			this.popSeen = false;
 			this.cartAdded = true;

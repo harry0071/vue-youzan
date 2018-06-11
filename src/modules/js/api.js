@@ -7,6 +7,7 @@ let url = {
 	searchHotItems:'/search/hotItems',//搜索热门品牌
 	goodsDetail:'/goods/details',//商品详情页
 	goodsDeal:'/goods/deal',//本店成交
+	cartLists:'/cart/lists',//购物车页
 };
 
 //通过注释手动切换接口域名
