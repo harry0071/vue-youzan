@@ -36,9 +36,10 @@ vue + vue-cli + axios + mint-ui + es6
 	    - [x] 热门分类
     - [x] 搜索商品
 - [ ] **购物车页cart**
-    - [x] xxxx
-    - [ ] xxxxx
-    - [ ] xxxxx
+    - [x] 商品全选联动
+    - [x] 自动计算总价
+    - [ ] 编辑功能
+    - [ ] 左滑删除功能
 - [ ] **个人中心页member**
     - [x] xxxxxxxx
     - [ ] xxxxxxxxxx
