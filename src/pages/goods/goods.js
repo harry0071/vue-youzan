@@ -11,6 +11,7 @@ import Vue from 'vue'
 import axios from 'axios'
 import Swipe from 'cp/Swipe.vue'
 import url from 'js/api.js'
+import { Toast } from 'mint-ui'
 
 import qs from 'qs'
 let {id} = qs.parse(location.search.substring(1));//提取查询参数中的id
@@ -30,7 +31,6 @@ new Vue({
 		skuNumber:1,//购买数量
 		cart:[],
 		cartAdded:false,
-		showMsg:false,
 	},
 	watch:{
 		popSeen(newVal,oldVal){//监听popSeen的变化
@@ -84,8 +84,7 @@ new Vue({
 			});
 			this.popSeen = false;
 			this.cartAdded = true;
-			this.showMsg = true;
-			setTimeout(()=>{this.showMsg=false},1000);
+			Toast('已成功添加到购物车');
 		},
 	},
 });

@@ -17,7 +17,7 @@ npm run build
 ```
 
 ## 技术栈
-vue + vue-cli + axios + mint-ui + es6
+vue + vue-cli + axios + easy-mock + mint-ui + es6
 
 ## 插件
 - qs：处理查询参数，将字符串格式的查询参数转变成键值对格式
@@ -40,7 +40,9 @@ vue + vue-cli + axios + mint-ui + es6
     - [x] 商品全选联动
     - [x] 自动计算总价
     - [ ] 编辑功能
-    - [ ] 左滑删除功能
+        - [x] 商品数量的加减
+        - [x] 单个商品的删除
+    - [x] 左滑删除功能
 - [ ] **个人中心页member**
     - [x] xxxxxxxx
     - [ ] xxxxxxxxxx

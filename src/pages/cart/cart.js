@@ -7,18 +7,18 @@ import Vue from 'vue';
 import axios from 'axios';
 import url from 'js/api.js';
 
-import { MessageBox } from 'mint-ui';
-
-let timer = null;
+import { MessageBox,CellSwipe,Toast } from 'mint-ui';
 
 new Vue({
 	el: ".container",
+	components:{
+		'mt-cell-swipe':CellSwipe,
+	},
 	data : {
 		lists:null,
 		totalPrice:0,
 		editShop:null,
 		editShopIndex:-1,
-		showMsg:false,
 	},
 	computed:{
 		allChoose:{
@@ -135,10 +135,10 @@ new Vue({
 		plusGood(good){
 			if (good.skuNumber>=good.remain) {
 				good.skuNumber = good.remain;
-				this.showMsg = true;
-				timer = setTimeout(()=>{
-					this.showMsg = false;
-				},1200);
+				Toast({
+				  message: '超出最大库存！',
+				  duration: 1200,
+				});
 				return;
 			}
 			//axios.post(url.xxx,{id:good.id,num:good.skuNumber+1}).then(res=>good.skuNumber++)
@@ -165,6 +165,11 @@ new Vue({
 			this.lists.forEach(list => {
 				list.editSeen = true;
 			});
-		}
+		},
+		removeList(){
+			MessageBox.confirm(`确定删除这个商品?`).then(action => {
+
+			});
+		},
 	},
 })
