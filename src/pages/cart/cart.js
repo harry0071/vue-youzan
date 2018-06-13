@@ -7,6 +7,10 @@ import Vue from 'vue';
 import axios from 'axios';
 import url from 'js/api.js';
 
+import { MessageBox } from 'mint-ui';
+
+let timer = null;
+
 new Vue({
 	el: ".container",
 	data : {
@@ -14,6 +18,7 @@ new Vue({
 		totalPrice:0,
 		editShop:null,
 		editShopIndex:-1,
+		showMsg:false,
 	},
 	computed:{
 		allChoose:{
@@ -123,5 +128,43 @@ new Vue({
 			this.editShop = list.editable ? list : null;
 			this.editShopIndex = list.editable ? shopIndex : -1;
 		},
+		minusGood(good){
+			if (good.skuNumber==1) return;
+			good.skuNumber--;
+		},
+		plusGood(good){
+			if (good.skuNumber>=good.remain) {
+				good.skuNumber = good.remain;
+				this.showMsg = true;
+				timer = setTimeout(()=>{
+					this.showMsg = false;
+				},1200);
+				return;
+			}
+			//axios.post(url.xxx,{id:good.id,num:good.skuNumber+1}).then(res=>good.skuNumber++)
+			good.skuNumber++;
+
+		},
+		removeGood(shop,shopIndex,good,goodIndex){
+			MessageBox.confirm('确定要删除该商品吗?').then(yes => {
+				 //axios.post(url.xxx,{id:good.id}).then(res=>{删除本地商品});
+				 shop.goodsLists.splice(goodIndex,1);
+				 if (!shop.goodsLists.length) {
+				 	this.lists.splice(shopIndex,1);
+				 	this.afterShopRemoved();
+				 }
+			},
+			cancel => {
+				return;
+			}
+			);
+		},
+		afterShopRemoved(){
+			this.editShop = null;
+			this.editShopIndex = -1;
+			this.lists.forEach(list => {
+				list.editSeen = true;
+			});
+		}
 	},
 })

@@ -77,13 +77,21 @@
                           v-show="list.editable"
                           class="num">
                             <div class="quantity">
-                              <button type="button" class="minus disabled"></button>
+                              <button
+                              :class={disabled:good.skuNumber==1}
+                              type="button" class="minus"></button>
                               <input
                               v-model.number="good.skuNumber"
                               type="text" pattern="[0-9]*" class="txt">
-                              <button type="button" class="plus "></button>
-                              <div class="response-area response-area-minus"></div>
-                              <div class="response-area response-area-plus"></div>
+                              <button
+                              :class={disabled:good.skuNumber==good.remain}
+                              type="button" class="plus"></button>
+                              <div
+                              @click="minusGood(good)"
+                              class="response-area response-area-minus"></div>
+                              <div
+                              @click="plusGood(good)"
+                              class="response-area response-area-plus"></div>
                             </div>
                           </div>
                           <div class="price c-orange">
@@ -91,7 +99,9 @@
                         </div>
                         <div class="error-box"></div>
                       </div>
-                      <div class="delete-btn"><span>删除</span></div>
+                      <div
+                      @click="removeGood(list,shopIndex,good,goodIndex)"
+                      class="delete-btn"><span>删除</span></div>
                     </div>
                   </li>
                 </ul>
@@ -165,6 +175,10 @@
           </div>
         </div>
       </div>
+    </div>
+    
+    <div class="motify" :style="{display:showMsg?'block':'none'}">
+      <div class="motify-inner">超出最大库存！</div>
     </div>
   </div>
   <div class="footer" style="min-height: 86px;">
