@@ -12,7 +12,7 @@ npm i
 # 然后运行项目
 npm start
 
-# 打包
+# 发布打包
 npm run build
 ```
 

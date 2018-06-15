@@ -53,15 +53,14 @@
               </div>
               <div>
                 <ul class="js-list block block-list block-list-cart border-0">
-                  <mt-cell-swipe
-                  :right="[{
-                  content: '删除',
-                  style: { background: '#f43', color: '#fff', display:'flex', alignItems:'center', padding:'0 16px' },
-                  handler: () => removeGood(list,shopIndex,good,goodIndex)
-                }]"
+                  <li
+                  @touchstart="start($event)"
+                  @touchend="end($event,good)"
+                  :ref="'good-'+ good.id"
                   :class={editing:list.editable}
                   v-for="(good,goodIndex) in list.goodsLists"
-                  class="block-item block-item-cart">
+                  :key="good.id"
+                  class="block-item block-item-cart" style="transition: .5s">
                     <div>
                       <div @click="chooseGood(list,good)"
                       class="check-container">
@@ -117,7 +116,7 @@
                       @click="removeGood(list,shopIndex,good,goodIndex)"
                       class="delete-btn"><span>删除</span></div>
                     </div>
-                  </mt-cell-swipe>
+                  </li>
                 </ul>
               </div>
             </div>
