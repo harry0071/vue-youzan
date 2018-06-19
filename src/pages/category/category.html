@@ -54,7 +54,7 @@
           <ul class="nav" id="scroll-nav-content" style="height: 540px; transform: translate3d(0px, 0px, 0px);">
             <li class="category-name js-category-name"
             v-for="(kind,index) in kinds"
-            :class={active:clickIndex===index}
+            :class="{'active':clickIndex===index}"
             :data-cid="kind.cid"
             @click="getItems(kind.cid,index)">
               {{kind.name}} </li>

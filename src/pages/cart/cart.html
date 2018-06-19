@@ -42,7 +42,7 @@
                 <div @click="chooseShop(list)"
                 class="select-group js-select-group">
                   <span
-                  :class="{checked:editShop?list.removeChecked:list.checked}"
+                  :class="{'checked':editShop?list.removeChecked:list.checked}"
                   class="check"></span>
                 </div> <a class="shop-title"><i class="custom-store-img">店铺：</i>{{list.storeName}}</a>
                 <a @click="edit(list,shopIndex)"
@@ -57,14 +57,14 @@
                   @touchstart="start($event)"
                   @touchend="end($event,good)"
                   :ref="'good-'+ good.id"
-                  :class={editing:list.editable}
+                  :class="{'editing':list.editable}"
                   v-for="(good,goodIndex) in list.goodsLists"
                   :key="good.id"
                   class="block-item block-item-cart" style="transition: .5s">
                     <div>
                       <div @click="chooseGood(list,good)"
                       class="check-container">
-                        <span :class="{checked:editShop?good.removeChecked:good.checked}"
+                        <span :class="{'checked':editShop?good.removeChecked:good.checked}"
                         class="check"></span>
                       </div>
                       <div class="name-card clearfix">
@@ -91,13 +91,13 @@
                           class="num">
                             <div class="quantity">
                               <button
-                              :class={disabled:good.skuNumber==1}
+                              :class="{'disabled':good.skuNumber==1}"
                               type="button" class="minus"></button>
                               <input
                               v-model.number="good.skuNumber"
                               type="text" pattern="[0-9]*" class="txt">
                               <button
-                              :class={disabled:good.skuNumber==good.remain}
+                              :class="{'disabled':good.skuNumber==good.remain}"
                               type="button" class="plus"></button>
                               <div
                               @click="minusGood(good)"
@@ -128,7 +128,7 @@
             <div class="bottom-cart clear-fix">
               <div @click="chooseAll()"
               class="select-all">
-                <span :class={checked:allChoose}
+                <span :class="{'checked':allChoose}"
                 class="check"></span> 全选
               </div>
               <!-- 正常显示状态 -->

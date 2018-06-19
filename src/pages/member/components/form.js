@@ -26,12 +26,15 @@ export default {
 					return province.value == newVal;
 				})
 				this.cityList = list[ListIndex].children;
-				this.cValue = -1;
-				this.ctValue = -1;
-
 				if (this.type == 'edit') {
 					this.cValue = this.obj.cValue;
+					this.obj.cValue = -1;
+					this.ctValue = -1;
+				} else {
+					this.cValue = -1;
+					this.ctValue = -1;
 				}
+
 			}
 		},
 		cValue(newVal){
@@ -43,12 +46,16 @@ export default {
 					return city.value == newVal;
 				})
 				this.countyList = cityList[cityIndex].children;
-				this.ctValue = -1;
-			}
 
 			if (this.type == 'edit') {
 				this.ctValue = this.obj.ctValue;
+				this.obj.ctValue = -1;
+			}else {
+				this.ctValue = -1;
 			}
+				
+			}
+
 		},
 	},
 	created(){

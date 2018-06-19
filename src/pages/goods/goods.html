@@ -103,9 +103,9 @@
             <div class="js-detail-container" style="margin-top: 10px;">
               <div class="js-tabber-container goods-detail">
                 <div class="js-tabber tabber tabber-n2 clearfix orange">
-                  <button :class="{active:tabber==0}" @click="tabber=0">
+                  <button :class="{'active':tabber==0}" @click="tabber=0">
                     商品详情 </button>
-                  <button :class="{active:tabber==1}" @click="getGoodsDeal();tabber=1">
+                  <button :class="{'active':tabber==1}" @click="getGoodsDeal();tabber=1">
                     本店成交 </button>
                 </div>
                 <div class="js-tabber-content">
@@ -256,11 +256,11 @@
                 <dl class="clearfix">
                   <div class="quantity">
                     <button
-                    :class="{disabled:skuNumber==1}"
+                    :class="{'disabled':skuNumber==1}"
                     class="minus" type="button"></button>
                     <input type="text" class="txt" pattern="[0-9]*" :value="skuNumber" disabled>
                     <button
-                    :class="{disabled:skuNumber==this.data.remain}"
+                    :class="{'disabled':skuNumber==this.data.remain}"
                     class="plus" type="button"></button>
                     <div class="response-area response-area-minus"
                     @click="changeSkuNumber(-1)"

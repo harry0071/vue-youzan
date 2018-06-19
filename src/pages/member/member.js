@@ -10,6 +10,7 @@ import Member from './components/Member.vue'
 import Address from './components/Address.vue'
 import ChooseAddress from './components/ChooseAddress.vue'
 import AddressForm from './components/AddressForm.vue'
+//const AddressForm = () => import('./components/AddressForm.vue')
 
 // 配置路由
 const routes = [{
