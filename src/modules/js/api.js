@@ -8,6 +8,7 @@ let url = {
 	goodsDetail:'/goods/details',//商品详情页
 	goodsDeal:'/goods/deal',//本店成交
 	cartLists:'/cart/lists',//购物车页
+	mylists:'/address/mylists',//我的地址列表
 };
 
 //通过注释手动切换接口域名

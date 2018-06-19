@@ -9,7 +9,7 @@ Vue.use(VueRouter)
 import Member from './components/Member.vue'
 import Address from './components/Address.vue'
 import ChooseAddress from './components/ChooseAddress.vue'
-import Form from './components/Form.vue'
+import AddressForm from './components/AddressForm.vue'
 
 // 配置路由
 const routes = [{
@@ -21,6 +21,7 @@ const routes = [{
 		component: Address,
 		children: [{
 			path: 'choose',
+			name:'choose',
 			component: ChooseAddress,
 		},
 		{
@@ -29,7 +30,8 @@ const routes = [{
 		},
 		{
 			path: 'form',
-			component: Form,
+			name:'form',
+			component: AddressForm,
 		},
 		],
 
