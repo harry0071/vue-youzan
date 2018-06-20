@@ -15,19 +15,19 @@
   let navConfig = [{
     name:'有赞',
     icon:'icon-home',
-    link:'/index.html',
+    link:'index.html',
   },{
     name:'分类',
     icon:'icon-category',
-    link:'/category.html',
+    link:'category.html',
   },{
     name:'购物车',
     icon:'icon-cart',
-    link:'/cart.html',
+    link:'cart.html',
   },{
     name:'我',
     icon:'icon-user',
-    link:'/member.html',
+    link:'member.html',
   },];
   export default {
     props:['pageIndex'],

@@ -4,9 +4,6 @@
   padding: 10px;
   line-height: 1.5;
   border: 0;
-  -webkit-border-image: url("https://b.yzcdn.cn/v2/image/wap/border-line-2.png") 2 stretch;
-  -moz-border-image: url("https://b.yzcdn.cn/v2/image/wap/border-line-2.png") 2 stretch;
-  border-image: url("https://b.yzcdn.cn/v2/image/wap/border-line-2.png") 2 stretch;
   border-top: 2px solid #e5e5e5;
   overflow: hidden
 }
@@ -57,9 +54,6 @@ only screen and (min-device-pixel-ratio: 1.5) {
 }
 
 .block {
-  -webkit-border-image: url("https://b.yzcdn.cn/v2/image/wap/border-line-2.png") 2 stretch;
-  -moz-border-image: url("https://b.yzcdn.cn/v2/image/wap/border-line-2.png") 2 stretch;
-  border-image: url("https://b.yzcdn.cn/v2/image/wap/border-line-2.png") 2 stretch;
   border-top: 2px solid #e5e5e5;
   border-bottom: 2px solid #e5e5e5;
   overflow: hidden;
@@ -269,9 +263,6 @@ body.has-bottom-nav {
   bottom: 0;
   background-color: #fff;
   z-index: 999;
-  -webkit-border-image: url("https://b.yzcdn.cn/v2/image/wap/border-line-2.png") 2 stretch;
-  -moz-border-image: url("https://b.yzcdn.cn/v2/image/wap/border-line-2.png") 2 stretch;
-  border-image: url("https://b.yzcdn.cn/v2/image/wap/border-line-2.png") 2 stretch;
   border-top: 2px solid #e5e5e5
 }
 
@@ -591,9 +582,6 @@ only screen and (min-device-pixel-ratio: 1.5) {
 .popout-box .header {
   position: relative;
   margin-bottom: 10px;
-  -webkit-border-image: url("https://b.yzcdn.cn/v2/image/wap/border-line-2.png") 2 stretch;
-  -moz-border-image: url("https://b.yzcdn.cn/v2/image/wap/border-line-2.png") 2 stretch;
-  border-image: url("https://b.yzcdn.cn/v2/image/wap/border-line-2.png") 2 stretch;
   border-bottom: 2px solid #e5e5e5
 }
 

@@ -22,11 +22,16 @@
   <link rel="shortcut icon" href="https://b.yzcdn.cn/v2/image/yz_fc.ico">
   <title>发现朋友圈的推荐</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <style>
+    [v-cloak]{
+      display: none;
+    }
+  </style>
 </head>
 
 <body class=" " style="min-height: 860px;">
-<div id="app">
-  <div class="container with-bottom-nav" style="min-height: 667px;">
+<div id="app" v-cloak>
+  <div v-if="bannerLists" class="container with-bottom-nav" style="min-height: 667px;">
     <div class="content">
       <swipe v-bind="{bannerLists}" v-if="bannerLists"></swipe>
       <div class="section-title">优店推荐</div>
@@ -79,6 +84,7 @@
       <div class="js-show-find category-guid" style="display: none;"></div>
     </div>
   </div>
+  <div v-else class="loading-more"><span></span></div>
   <footer-nav page-index="0"></footer-nav>
 </div>
 </body>
