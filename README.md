@@ -17,7 +17,7 @@ npm run build
 ```
 
 ## 技术栈
-vue + vue-cli + vue-router + axios + easy-mock + mint-ui + es6
+vue + vue-cli + vue-router + vuex + axios + easy-mock + mint-ui + es6
 
 ## 插件
 - qs：处理查询参数，将字符串格式的查询参数转变成键值对格式

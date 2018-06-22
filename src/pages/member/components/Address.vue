@@ -1,8 +1,6 @@
-<template class="container-bottom-menu" style="cursor:pointer;">
-    <router-view></router-view>
+<template>
+	<div class="container-bottom-menu" style="cursor:pointer;">
+    	<router-view></router-view>		
+	</div>
 </template>
 
-<style>
-  @import './address_base.css';
-  @import './address.css';
-</style>

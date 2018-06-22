@@ -1,13 +1,18 @@
 import { MessageBox } from 'mint-ui';
+import { mapState } from 'vuex';
 export default {
 	data(){
 		return {
 			name:'',
 			tel:'',
 			pValue:-1,
+			province:'',
 			cValue:-1,
+			city:'',
 			ctValue:-1,
+			county:'',
 			address:'',
+			isDefault:false,
 			id:-1,
 			type:this.$route.query.type,
 			obj:this.$route.query.obj,
@@ -16,12 +21,26 @@ export default {
 			countyList:[],
 		}
 	},
+	computed: {
+	  ...mapState(['lists'])
+	},
 	watch:{
+		lists:{
+			handler(){
+				this.$router.go(-1);
+			},
+			deep:true
+		},
 		pValue(newVal){
 			if (newVal == -1) {
 				return;
 			} else {
 				let list = this.addressData.list;
+				list.forEach(item => {
+					if (item.value == newVal) {
+						this.province = item.label;
+					}
+				});
 				let ListIndex = list.findIndex(province => {
 					return province.value == newVal;
 				})
@@ -42,6 +61,11 @@ export default {
 				return;
 			} else {
 				let cityList = this.cityList;
+				cityList.forEach(item => {
+					if (item.value == newVal) {
+						this.city = item.label;
+					}
+				});
 				let cityIndex = cityList.findIndex(city => {
 					return city.value == newVal;
 				})
@@ -57,6 +81,14 @@ export default {
 			}
 
 		},
+		ctValue(newVal){
+			let ctList = this.countyList;
+			ctList.forEach(item => {
+				if (item.value == newVal) {
+					this.county = item.label;
+				}
+			});
+		}
 	},
 	created(){
 		if (this.type == 'edit') {
@@ -65,35 +97,33 @@ export default {
 				tel:this.obj.tel,
 				pValue:this.obj.pValue,
 				address:this.obj.address,
+				isDefault:this.obj.isDefault,
 				id:this.obj.id,
 			});
 
 		}
 	},
 	methods:{
-		addAddress(){
-			let {name,tel,pValue,cValue,ctValue,address} = this;
-			let data = {name,tel,pValue,cValue,ctValue,address};
+		saveAddress(){
+			let {name,tel,pValue,province,cValue,city,ctValue,county,address,isDefault,id} = this;
+			let data = {name,tel,pValue,province,cValue,city,ctValue,county,address,isDefault,id};
 			if (this.type == 'add') {
-				//axios.post()保存到后台
-				this.$router.go(-1);//后退一步
+				this.$store.dispatch('addAddress',data);
 			} else if (this.type == 'edit') {
-				//编辑更新到后台
-				this.$router.go(-1);
+				this.$store.dispatch('editAddress',data);
+				//this.$router.go(-1);
 			}
 		},
-		remove(){
+		removeAddress(){
 			MessageBox.confirm('确定要删除吗?').then(yes => {
-				//传给后台id进行删除
-				this.$router.go(-1);
+				this.$store.dispatch('removeAddress',this.id);
 			},
 			cancel => {
 				return;
 			});
 		},
 		setDefault(){
-			//传给后台id，将其设为默认
-			this.$router.go(-1);
+			this.$store.dispatch('setDefault',this.id);
 		},
 	},
 }
