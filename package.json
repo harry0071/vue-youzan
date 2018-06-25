@@ -1,7 +1,7 @@
 {
   "name": "youzan",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "vue重构有赞商城",
   "author": "stage <1311012326@qq.com>",
   "private": true,
   "scripts": {

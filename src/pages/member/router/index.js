@@ -5,9 +5,9 @@ Vue.use(VueRouter)
 
 //定义组件
 import Member from '../components/Member.vue'
-import Address from '../components/Address.vue'
-import ChooseAddress from '../components/ChooseAddress.vue'
-import AddressForm from '../components/AddressForm.vue'
+const Address = () => import(/* webpackChunkName: "address" */ '../components/Address.vue')
+const ChooseAddress = () => import(/* webpackChunkName: "address" */ '../components/ChooseAddress.vue')
+const AddressForm = () => import(/* webpackChunkName: "address-form" */ '../components/AddressForm.vue')
 
 // 配置路由
 const routes = [{

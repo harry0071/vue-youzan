@@ -6,7 +6,7 @@ import store from './vuex/index.js';
 
 // 将router传给new实例
 new Vue({
-	el: '#app',
-	router,
-	store,
+    el: '#app',
+    router,
+    store,
 });

@@ -1,5 +1,5 @@
-//轮播组件
-//需要从外面传入bannerLists:[{link:'',img:''}]
+<!-- 轮播组件
+需要从外面传入bannerLists:[{link:'',img:''}] -->
 <template>
   <div class="swiper-container">
     <div class="swiper-wrapper">
