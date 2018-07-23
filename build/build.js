@@ -28,14 +28,14 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
     }) + '\n\n')
 
     if (stats.hasErrors()) {
-      console.log(chalk.red('  Build failed with errors.\n'))
+      console.log(chalk.red('  打包时出错啦 _(:з」∠)_ \n'))
       process.exit(1)
     }
 
-    console.log(chalk.cyan('  Build complete.\n'))
+    console.log(chalk.cyan('  打包完成 ( • ̀ω•́ )✧ \n'))
     console.log(chalk.yellow(
-      '  Tip: built files are meant to be served over an HTTP server.\n' +
-      '  Opening index.html over file:// won\'t work.\n'
+      '  Tip: 你需要通过 http:// 来打开dist下的index.html \n' +
+      '  通过 file:// 可能会有问题.\n'
     ))
   })
 })
