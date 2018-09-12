@@ -6,6 +6,8 @@
 # 预览效果
 ![预览图.jpg](https://i.loli.net/2018/09/06/5b90cf3a5e9c3.jpg)
 
+![xx.gif](https://i.loli.net/2018/09/12/5b986fe8bec7b.gif)
+
 预览链接 👉 [点击预览](https://harry0071.github.io/vue-youzan/)
 
 ## 技术栈
